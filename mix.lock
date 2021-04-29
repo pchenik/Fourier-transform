@@ -1,0 +1,6 @@
+%{
+  "complex": {:hex, :complex, "0.2.0", "43ec497be382952b8495aff347b2e475ac2418bbffb12b00a47764f5186a0258", [:mix], [{:earmark, "~> 0.1", [hex: :earmark, repo: "hexpm", optional: false]}, {:exprintf, "~> 0.1", [hex: :exprintf, repo: "hexpm", optional: false]}], "hexpm", "6db6a2850ed907c4d9e062591110dc70c35c3818ccf609f1268052a3f4bf10b0"},
+  "earmark": {:hex, :earmark, "0.2.1", "ba6d26ceb16106d069b289df66751734802777a3cbb6787026dd800ffeb850f3", [:mix], [], "hexpm", "c86afb8d22a5aa8315afd4257c7512011c0c9a48b0fea43af7612836b958098b"},
+  "exprintf": {:hex, :exprintf, "0.2.1", "b7e895dfb00520cfb7fc1671303b63b37dc3897c59be7cbf1ae62f766a8a0314", [:mix], [], "hexpm", "20a0e8c880be90e56a77fcc82533c5d60c643915c7ce0cc8aa1e06ed6001da28"},
+  "persistent_vector": {:hex, :persistent_vector, "0.1.4", "3103d04f2e3a34399f5e5b8dd59d4ff05bad2bb449bcf8c460605b218a9df29e", [:mix], [], "hexpm", "4108bd191b93f3307b4e88431826c121d9fb1aeb3f93c12c5491e6541a23074d"},
+}
