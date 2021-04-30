@@ -15,6 +15,33 @@ def deps do
 end
 ```
 
+## Example
+```elixir
+#Инициализация процесса, последнего в цепочке выполнения процессов, ответственного
+#за выдачу результатов
+cust = spawn(Fourier, :get_result, [])
+#Чтение вектора коэффициентов многочлена
+list = String.split(File.read!("./lib/numbers.txt"))
+#Преобразование односвязного списка в массив
+array = Enum.map(list1, fn x -> Complex.new(String.to_integer(x), 0) end)
+        |> PersistentVector.new
+
+#Получение размера массива и инициализация первообразного корня из единицы
+n = PersistentVector.count(array)
+w = Complex.fromPolar(1, :math.pi * 2 / n)
+#Инициализация процесса vector, отвечающий за выдачу коэффициента многочлена
+#по запросу
+get_element = spawn(Fourier, :vector, [array])
+#Получение времени системы
+time = :os.system_time(:millisecond)
+
+#Инициализация процесса с поведением fft и передача ему сообщения - начало вычислений
+start = spawn(Fourier, :fft, [w, cust, get_element, true, time])
+send start, {:forward, 0, n, 1}
+```
+
+
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/fourier](https://hexdocs.pm/fourier).
